@@ -154,8 +154,7 @@ function initClickHandler() {
     rootElement.addEventListener('click', (e) => {
         const ulElement = e.target.querySelector('.list__ul');
         if (!ulElement) return;
-        let classes = [];
-        ulElement.classList.forEach((item) => classes.push(item));
+        let classes = [...ulElement.classList];
         const isActive = classes.some((classItem) => classItem === 'list__ul--inactive')
         if (isActive) {
             ulElement.classList.remove('list__ul--inactive');
